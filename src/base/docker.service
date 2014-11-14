@@ -1,0 +1,5 @@
+[Unit]
+Description=Docker Service
+
+[Service]
+ExecStart=/opt/docker/bin/docker -d
