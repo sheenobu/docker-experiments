@@ -1,5 +1,9 @@
 [Unit]
 Description=Docker Service
+After=network.target
 
 [Service]
 ExecStart=/opt/docker/bin/docker -d
+
+[Install]
+RequiredBy=multi-user.target

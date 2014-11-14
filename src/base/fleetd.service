@@ -1,0 +1,9 @@
+[Unit]
+Description=Fleet Service
+After=network.target, docker.service, etcd.service
+
+[Service]
+ExecStart=/opt/docker/bin/fleetd
+
+[Install]
+RequiredBy=multi-user.target

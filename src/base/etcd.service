@@ -1,0 +1,9 @@
+[Unit]
+Description=Etcd Service
+After=network.target, docker.service
+
+[Service]
+ExecStart=/opt/docker/bin/etcd -data-dir /opt/docker/data/etcd/ -name etcd1
+
+[Install]
+RequiredBy=multi-user.target
