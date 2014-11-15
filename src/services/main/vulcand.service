@@ -2,6 +2,7 @@
 Description=Vulcan HTTP Router Service
 After=docker.service
 Requires=docker.service
+Before=apache.endpoint.service
 
 [Service]
 EnvironmentFile=/etc/environment
@@ -15,3 +16,5 @@ ExecStart=/opt/docker/bin/docker run \
   /go/bin/vulcand --etcd=http://192.168.33.10:4001
 
 ExecStop=/opt/docker/bin/docker stop vulcand
+Restart=always
+RestartSec=10

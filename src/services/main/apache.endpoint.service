@@ -1,8 +1,11 @@
 [Unit]
-Description=Announce Apache Endpoint
+Description=Announce the Apache Endpoints to Vulcan
 Wants=apache@1.service apache@2.service apache@3.service
 Requires=vulcand.service
+After=apache.endpoint.service
 
 [Service]
 ExecStart=/opt/docker/util/announce.endpoint
 ExecStop=/opt/docker/util/unannounce.endpoint
+Restart=always
+RestartSec=10

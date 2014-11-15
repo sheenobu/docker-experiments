@@ -1,0 +1,8 @@
+[Unit]
+Description=Run the health check of the Apache Service every two minutes
+
+[Timer]
+OnCalendar=*:0/2
+
+[X-Fleet]
+X-ConditionMachineOf=apache.hc@%i.service

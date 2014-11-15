@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. /opt/docker/conf/$1.sh
+
+/opt/docker/bin/docker run --name $1 $MAPPINGS $2 && exit 0 || exit 255

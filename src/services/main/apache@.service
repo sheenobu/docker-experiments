@@ -1,13 +1,14 @@
 [Unit]
-Description=Apache Instance %i
+Description=Apache Service Instance
 After=docker.service
-Requires=docker.service apache.sk@%i.service
-Before=apache.sk@%i.service
+Requires=docker.service apache.sk@%i.service apache.hc@%i.timer
+Before=apache.sk@%i.service apache.hc@%i.timer
 
 [Service]
-EnvironmentFile=/opt/docker/conf/apache.%i.sh
 TimeoutStartSec=0
 ExecStartPre=-/opt/docker/bin/docker kill apache.%i
 ExecStartPre=-/opt/docker/bin/docker rm apache.%i
-ExecStart=/bin/sh -c '/opt/docker/bin/docker run --name apache.%i -p $PORT:80 local/apache2'
+ExecStart=/opt/docker/util/dockerlaunch apache.%i local/apache2
 ExecStop=/opt/docker/bin/docker stop -t 20 apache.%i
+Restart=always
+RestartSec=10
