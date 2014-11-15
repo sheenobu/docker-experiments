@@ -1,0 +1,13 @@
+[Unit]
+Description=Announce Apache1
+BindsTo=apache.1.service
+After=apache.1.service
+
+[Service]
+EnvironmentFile=/etc/environment
+TimeoutStartSec=0
+ExecStart=/opt/docker/util/announce.vulcan 1 8085
+ExecStop=/opt/docker/util/unannounce.vulcan 1
+
+[X-Fleet]
+X-ConditionMachineOf=apache.1.service

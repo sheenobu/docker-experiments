@@ -1,0 +1,6 @@
+[Unit]
+Description=Announce Apache Endpoint
+
+[Service]
+ExecStart=/opt/docker/util/announce.endpoint
+ExecStop=/opt/docker/util/unannounce.endpoint

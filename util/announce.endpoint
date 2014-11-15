@@ -1,0 +1,10 @@
+#!/bin/bash
+
+CMD="/opt/docker/bin/etcdctl set --ttl=60"
+
+while true; do
+  $CMD "/vulcand/hosts/192.168.33.10/locations/home/path"     '/.*'
+  $CMD "/vulcand/hosts/192.168.33.10/locations/home/upstream" "example"
+
+  sleep 45
+done

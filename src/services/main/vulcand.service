@@ -1,0 +1,17 @@
+[Unit]
+Description=Vulcan HTTP Router Service
+After=docker.service
+Requires=docker.service
+
+[Service]
+EnvironmentFile=/etc/environment
+TimeoutStartSec=0
+ExecStartPre=-/opt/docker/bin/docker kill vulcand
+ExecStartPre=-/opt/docker/bin/docker rm vulcand
+
+ExecStart=/opt/docker/bin/docker run \
+  -p 8182:8182 -p 8181:8181 \
+  --name vulcand local/vulcand \
+  /go/bin/vulcand --etcd=http://192.168.33.10:4001
+
+ExecStop=/opt/docker/bin/docker stop vulcand

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+/opt/docker/bin/etcdctl rm /vulcand/upstreams/example/endpoints/apache.$1.service
