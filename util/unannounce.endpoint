@@ -3,5 +3,6 @@
 
 CMD="/opt/docker/bin/etcdctl rm"
 
+$CMD /vulcand/hosts/192.168.33.10/locations/home
 $CMD /vulcand/hosts/192.168.33.10/locations/home/path
 $CMD /vulcand/hosts/192.168.33.10/locations/home/upstream

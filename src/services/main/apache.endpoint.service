@@ -1,6 +1,6 @@
 [Unit]
 Description=Announce Apache Endpoint
-Wants=apache.1.service apache.2.service apache.3.service
+Wants=apache@1.service apache@2.service apache@3.service
 Requires=vulcand.service
 
 [Service]

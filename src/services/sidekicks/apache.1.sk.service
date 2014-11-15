@@ -1,7 +1,7 @@
 [Unit]
 Description=Announce Apache1
-BindsTo=apache.1.service
-After=apache.1.service
+BindsTo=apache@1.service
+After=apache@1.service
 
 [Service]
 EnvironmentFile=/etc/environment
@@ -11,4 +11,4 @@ ExecStop=/opt/docker/util/unannounce.vulcan 1
 Restart=always
 
 [X-Fleet]
-X-ConditionMachineOf=apache.1.service
+X-ConditionMachineOf=apache@1.service

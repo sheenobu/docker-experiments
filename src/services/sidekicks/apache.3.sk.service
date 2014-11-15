@@ -1,7 +1,7 @@
 [Unit]
 Description=Announce Apache3
-BindsTo=apache.3.service
-After=apache.3.service
+BindsTo=apache@3.service
+After=apache@3.service
 
 [Service]
 EnvironmentFile=/etc/environment
@@ -11,4 +11,4 @@ ExecStop=/opt/docker/util/unannounce.vulcan 3
 Restart=always
 
 [X-Fleet]
-X-ConditionMachineOf=apache.3.service
+X-ConditionMachineOf=apache@3.service
