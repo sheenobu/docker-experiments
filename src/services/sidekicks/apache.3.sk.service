@@ -8,6 +8,7 @@ EnvironmentFile=/etc/environment
 TimeoutStartSec=0
 ExecStart=/opt/docker/util/announce.vulcan 3 8087
 ExecStop=/opt/docker/util/unannounce.vulcan 3
+Restart=always
 
 [X-Fleet]
 X-ConditionMachineOf=apache.3.service

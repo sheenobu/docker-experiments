@@ -1,7 +1,8 @@
 [Unit]
 Description=Apache instance 2
 After=docker.service
-Requires=docker.service
+Requires=docker.service apache.2.sk.service
+Before=apache.2.sk.service
 
 [Service]
 EnvironmentFile=/etc/environment
