@@ -22,27 +22,29 @@ fleetctl start vulcand.service
 
 fleetctl unload apache.endpoint.service
 fleetctl unload apache@1.service
-fleetctl unload apache.1.sk.service
 fleetctl unload apache@2.service
-fleetctl unload apache.2.sk.service
 fleetctl unload apache@3.service
-fleetctl unload apache.3.sk.service
+
+fleetctl unload apache.sk@1.service
+fleetctl unload apache.sk@2.service
+fleetctl unload apache.sk@3.service
 
 fleetctl destroy apache.endpoint.service
+fleetctl destroy apache.sk@1.service
+fleetctl destroy apache.sk@2.service
+fleetctl destroy apache.sk@3.service
+
 fleetctl destroy apache@1.service
-fleetctl destroy apache.1.sk.service
 fleetctl destroy apache@2.service
-fleetctl destroy apache.2.sk.service
 fleetctl destroy apache@3.service
-fleetctl destroy apache.3.sk.service
 
 fleetctl load /opt/docker/src/services/main/apache@1.service
 fleetctl load /opt/docker/src/services/main/apache@2.service
 fleetctl load /opt/docker/src/services/main/apache@3.service
 
-fleetctl load /opt/docker/src/services/sidekicks/apache.1.sk.service
-fleetctl load /opt/docker/src/services/sidekicks/apache.2.sk.service
-fleetctl load /opt/docker/src/services/sidekicks/apache.3.sk.service
+fleetctl load /opt/docker/src/services/sidekicks/apache.sk@1.service
+fleetctl load /opt/docker/src/services/sidekicks/apache.sk@2.service
+fleetctl load /opt/docker/src/services/sidekicks/apache.sk@3.service
 
 fleetctl load /opt/docker/src/services/main/apache.endpoint.service
 

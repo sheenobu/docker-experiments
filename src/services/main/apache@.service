@@ -1,8 +1,8 @@
 [Unit]
 Description=Apache Instance %i
 After=docker.service
-Requires=docker.service apache.%i.sk.service
-Before=apache.%i.sk.service
+Requires=docker.service apache.sk@%i.service
+Before=apache.sk@%i.service
 
 [Service]
 EnvironmentFile=/opt/docker/conf/apache.%i.sh

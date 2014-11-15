@@ -1,0 +1,14 @@
+[Unit]
+Description=Announce Apache %i
+BindsTo=apache@%i.service
+After=apache@%i.service
+
+[Service]
+EnvironmentFile=/opt/docker/conf/apache.%i.sh
+TimeoutStartSec=0
+ExecStart=/bin/sh -c '/opt/docker/util/announce.vulcan %i $PORT'
+ExecStop=/opt/docker/util/unannounce.vulcan %i
+Restart=always
+
+[X-Fleet]
+X-ConditionMachineOf=apache@%i.service
