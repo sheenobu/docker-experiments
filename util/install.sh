@@ -46,11 +46,4 @@ fleetctl load /opt/docker/src/services/sidekicks/apache.3.sk.service
 
 fleetctl load /opt/docker/src/services/main/apache.endpoint.service
 
-fleetctl start apache.1.service
-fleetctl start apache.2.service
-fleetctl start apache.3.service
-
 fleetctl start apache.endpoint.service
-fleetctl start apache.1.sk.service
-fleetctl start apache.2.sk.service
-fleetctl start apache.3.sk.service
