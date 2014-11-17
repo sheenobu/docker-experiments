@@ -11,4 +11,4 @@ ExecStartPre=-/opt/docker/bin/docker rm apache.%i
 ExecStart=/opt/docker/util/dockerlaunch apache.%i local/apache2
 ExecStop=/opt/docker/bin/docker stop -t 20 apache.%i
 Restart=always
-RestartSec=10
+RestartSec=4

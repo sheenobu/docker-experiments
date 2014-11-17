@@ -3,7 +3,7 @@ Description=Fleet Read Only Web Interface
 After=network.target fleetd.service
 
 [Service]
-ExecStart=/opt/docker/bin/fleetweb
+ExecStart=/bin/bash -c "cd /opt/docker/src/fleetweb/ && /opt/docker/bin/fleetweb"
 
 [Install]
 RequiredBy=multi-user.target
