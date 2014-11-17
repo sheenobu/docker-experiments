@@ -1,0 +1,9 @@
+[Unit]
+Description=Fleet Kicker Service
+After=network.target fleetd.service
+
+[Service]
+ExecStart=/opt/docker/bin/kicker
+
+[Install]
+RequiredBy=multi-user.target

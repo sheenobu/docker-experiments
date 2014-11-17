@@ -5,6 +5,8 @@ cp -f /opt/docker/src/base/docker.service /usr/lib/systemd/system/docker.service
 cp -f /opt/docker/src/base/etcd.service /usr/lib/systemd/system/etcd.service
 cp -f /opt/docker/src/base/fleetd.service /usr/lib/systemd/system/fleetd.service
 cp -f /opt/docker/src/base/fleetweb.service /usr/lib/systemd/system/fleetweb.service
+cp -f /opt/docker/src/base/kicker.service /usr/lib/systemd/system/kicker.service
+
 
 systemctl daemon-reload
 
@@ -12,11 +14,13 @@ systemctl enable etcd
 systemctl enable docker
 systemctl enable fleetd
 systemctl enable fleetweb
+systemctl enable kicker
 
 systemctl start etcd
 systemctl start fleetd
 systemctl start docker
 systemctl start fleetweb
+systemctl start kicker
 
 fleetctl unload vulcand.service
 fleetctl load /opt/docker/src/services/main/vulcand.service
