@@ -34,10 +34,9 @@ func main() {
       if b {
         runStopUnit([]string{state.Name})
         runStartUnit([]string{state.Name})
-      }
-
-      if state.SystemdActiveState == "failed" {
-        //
+      }else if state.SystemdActiveState == "failed" {
+        runStopUnit([]string{state.Name})
+        runStartUnit([]string{state.Name})
       }
 
     }
